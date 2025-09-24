@@ -1,11 +1,12 @@
 ## builder-signing-server
 
-Server for creating builder headers
+Server for creating builder headers remotely
 
-## Features
+## Endpoints
 
 - **Health Check**: GET `/` - Returns server status
-- **Sign Endpoint**: POST `/sign` - Accepts signing requests with path, method, and body
+
+- **Sign Endpoint**: POST `/sign` - Accepts signing requests with path, method, and body and returns a `BuilderHeaderPayload`
 
 ## 📋 Prerequisites
 
