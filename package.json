@@ -20,7 +20,7 @@
         "start": "node dist/server.js",
         "deploy": "pnpm build && npm publish",
         "install-deps": "pnpm install",
-        "clean": "rm -rf dist coverage node_modules/.cache",
+        "clean": "rm -rf dist coverage node_modules/.cache"
     },
     "dependencies": {
         "@polymarket/builder-signing-sdk": "^0.0.2",
