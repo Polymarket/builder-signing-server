@@ -16,12 +16,11 @@
     "license": "MIT",
     "scripts": {
         "build": "make build",
-        "lint": "make lint",
+        "lint": "make lint",        
+        "start": "node dist/server.js",
         "deploy": "pnpm build && npm publish",
-        "test": "make test",
-        "start": "node dist/index.js",
-        "dev": "ts-node src/index.ts",
-        "install-deps": "pnpm install"
+        "install-deps": "pnpm install",
+        "clean": "rm -rf dist coverage node_modules/.cache",
     },
     "dependencies": {
         "@polymarket/builder-signing-sdk": "^0.0.2",
