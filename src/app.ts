@@ -20,7 +20,7 @@ export function createApp(signer: BuilderSigner): Express {
      * Health endpoint
      */
     app.get('/', (_req: Request, res: Response) => {
-        res.status(200).send('OK');
+        res.status(200).json({"data": 'OK'});
     });
 
     /**

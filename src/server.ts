@@ -7,7 +7,7 @@ import { createApp } from './app';
 
 dotenvConfig({ path: resolve(__dirname, "../.env") });
 
-const PORT = Number(process.env.PORT ?? 3000);
+const PORT = Number(process.env.PORT ?? 8080);
 
 const key = process.env.POLY_BUILDER_API_KEY;
 const secret = process.env.POLY_BUILDER_SECRET;
@@ -38,7 +38,7 @@ const app = createApp(signer);
 if (require.main === module) {
     app.listen(PORT, () => {
         // eslint-disable-next-line no-console
-        console.log(`Server listening on :${PORT}`);
+        console.log(`Builder signing server listening on :${PORT}`);
     });
 }
 

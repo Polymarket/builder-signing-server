@@ -16,7 +16,8 @@
     "license": "MIT",
     "scripts": {
         "build": "make build",
-        "lint": "make lint",        
+        "lint": "make lint",
+        "start-dev": "ts-node src/server.ts",
         "start": "node dist/server.js",
         "deploy": "pnpm build && npm publish",
         "install-deps": "pnpm install",
