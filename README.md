@@ -11,7 +11,6 @@ Server for creating builder headers remotely
 ## 📋 Prerequisites
 
 - **Node.js**: v18 or higher
-- **pnpm**: Package manager (recommended)
 
 ## Installation
 
