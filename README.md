@@ -8,7 +8,7 @@ Server for creating builder headers remotely
 
 - **Sign Endpoint**: POST `/sign` - Accepts signing requests with path, method, and body and returns a `BuilderHeaderPayload`
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **Node.js**: v18 or higher
 
@@ -20,7 +20,7 @@ pnpm install
 ```
 
 
-## 🌍 Environment Variables
+## Environment Variables
 
 Create a `.env` file in the root directory using the `.env.example` file as an example:
 
@@ -31,7 +31,7 @@ POLY_BUILDER_SECRET=your_secret
 POLY_BUILDER_PASSPHRASE=your_passphrase
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── src/                 # TypeScript source files
