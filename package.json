@@ -24,7 +24,7 @@
         "clean": "rm -rf dist coverage node_modules/.cache"
     },
     "dependencies": {
-        "@polymarket/builder-signing-sdk": "^0.0.2",
+        "@polymarket/builder-signing-sdk": "^0.0.6",
         "@types/cors": "^2.8.19",
         "@types/express": "^4.17.17",
         "@types/node": "^18.7.18",
