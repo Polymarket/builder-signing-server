@@ -16,7 +16,7 @@ export function createApp(signer: BuilderSigner, authorizationToken?: string): E
 
     // Authentication middleware
     app.use((req: Request, res: Response, next: NextFunction) => {
-        // If app doesn not have an authorization token, skip
+        // If app does not have an authorization token, skip
         if (!authorizationToken) {
             return next();
         }
