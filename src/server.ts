@@ -13,6 +13,8 @@ const key = process.env.POLY_BUILDER_API_KEY;
 const secret = process.env.POLY_BUILDER_SECRET;
 const passphrase = process.env.POLY_BUILDER_PASSPHRASE;
 
+const authorizationToken = process.env.AUTHORIZATION_TOKEN;
+
 if (!key) {
     throw new Error("POLY_BUILDER_API_KEY environment variable is required");
 }
@@ -32,7 +34,7 @@ const signer = new BuilderSigner({
     passphrase,
 });
 
-const app = createApp(signer);
+const app = createApp(signer, authorizationToken);
 
 
 if (require.main === module) {

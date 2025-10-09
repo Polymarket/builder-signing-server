@@ -6,7 +6,7 @@ import { BuilderSigner } from '@polymarket/builder-signing-sdk';
 import { SignRequest } from "./types";
 
 
-export function createApp(signer: BuilderSigner): Express {
+export function createApp(signer: BuilderSigner, authorizationToken?: string): Express {
     const app = express();
 
     // Middleware
@@ -14,6 +14,31 @@ export function createApp(signer: BuilderSigner): Express {
     app.use(cors());
     app.use(express.json({ limit: '1mb' }));
 
+    // Authentication middleware
+    app.use((req: Request, res: Response, next: NextFunction) => {
+        // If app doesn not have an authorization token, skip
+        if (!authorizationToken) {
+            return next();
+        }
+
+        // If app has authorization token, validate request token
+        const requestToken = req.headers.authorization;
+        
+        if (!requestToken) {
+            return res.status(401).json({ error: 'Authorization token required' });
+        }
+
+        // Remove 'Bearer ' prefix if present
+        const token = requestToken.startsWith('Bearer ') 
+            ? requestToken.slice(7) 
+            : requestToken;
+
+        if (token !== authorizationToken) {
+            return res.status(401).json({ error: 'Invalid authorization token' });
+        }
+
+        next();
+    });
 
     // Routes
     /**
