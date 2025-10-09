@@ -4,6 +4,7 @@ import cors from 'cors';
 import { BuilderSigner } from '@polymarket/builder-signing-sdk';
 
 import { SignRequest } from "./types";
+import { timeSafeCompare } from './utils';
 
 
 export function createApp(signer: BuilderSigner, authorizationToken?: string): Express {
@@ -33,7 +34,7 @@ export function createApp(signer: BuilderSigner, authorizationToken?: string): E
             ? requestToken.slice(7) 
             : requestToken;
 
-        if (token !== authorizationToken) {
+        if (!timeSafeCompare(token,authorizationToken)) {
             return res.status(401).json({ error: 'Invalid authorization token' });
         }
 
